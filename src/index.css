@@ -1,0 +1,9 @@
+@import "tailwindcss";
+body {
+  background-color: #080b0b;
+  color: aliceblue;
+}
+
+@theme {
+  --background-image-space-pattern: url('/space-crop.jpeg');
+}
