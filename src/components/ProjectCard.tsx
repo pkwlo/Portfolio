@@ -20,7 +20,7 @@ export default function ProjectCard({ title, description, tags, site, github }: 
   console.log(links);
 
   return (
-    <div className="project-card max-w-sm p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+    <div className="project-card max-w-sm p-6 bg-black/50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
       <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-100">{title}</h5>
       <p className="mb-3 font-normal text-gray-100">{description}</p>
       

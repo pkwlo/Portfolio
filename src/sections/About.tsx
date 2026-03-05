@@ -3,15 +3,11 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <motion.div 
-      // 1. Initial state (Hidden and 20px lower)
       initial={{ opacity: 0, y: 20 }}
-      // 2. Animate to this state when it enters the screen
       whileInView={{ opacity: 1, y: 0 }}
-      // 3. Settings for the scroll trigger
       viewport={{ once: false, amount: 0.3 }}
-      // 4. How the animation feels (duration and smoothing)
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="about p-6 flex flex-col text-center bg-black/40 rounded-lg shadow-md"
+      className="about p-6 flex flex-col text-center bg-black/50 rounded-lg shadow-md"
     >
         <p className="text-5xl font-semibold mb-5">PATRICIA</p>
         <p className="text-2xl font-semibold">Software Developer</p>
