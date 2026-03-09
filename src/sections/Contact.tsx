@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+import { Linkedin, Github, Mail } from "lucide-react";
+import { socialLinks } from "../data/links";
+
+const iconMap = { LinkedIn: Linkedin, GitHub: Github, Email: Mail };
 
 export default function Contact() {
   return (
@@ -47,6 +51,22 @@ export default function Contact() {
           >
             Send Message
           </button>
+          <div className="flex items-center justify-center gap-6 pt-8 mt-4 border-t border-[var(--color-border)]">
+            {socialLinks.map(({ href, label }) => {
+              const Icon = iconMap[label as keyof typeof iconMap];
+              return (
+              <a
+                key={label}
+                href={href}
+                {...(href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                className="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+                aria-label={label}
+              >
+                <Icon className="size-6" />
+              </a>
+            );
+            })}
+          </div>
         </form>
         </div>
       </div>
