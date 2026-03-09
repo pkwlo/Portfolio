@@ -10,12 +10,13 @@ export default function Projects() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="py-16 md:py-24"
+      className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8"
     >
-      <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-12">
-        Projects
-      </h2>
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="mx-auto max-w-4xl w-full">
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-12">
+          Projects
+        </h2>
+        <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project, idx) => (
           <ProjectCard
             key={idx}
@@ -26,6 +27,7 @@ export default function Projects() {
             github={project.github}
           />
         ))}
+        </div>
       </div>
     </motion.section>
   );

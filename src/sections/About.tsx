@@ -8,9 +8,10 @@ export default function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="py-16 md:py-24"
+      className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8"
     >
-      <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 p-8 md:p-12 backdrop-blur-sm">
+      <div className="mx-auto max-w-4xl w-full">
+        <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 p-8 md:p-12 backdrop-blur-sm">
         <p className="text-4xl md:text-5xl font-semibold tracking-tight text-[var(--color-text)] mb-2">
           Patricia
         </p>
@@ -24,6 +25,7 @@ export default function About() {
           <p className="text-[var(--color-text-muted)] leading-relaxed">
             Before becoming a software developer, I worked in health care for over 10 years. I became interested in dev work as a hobby through my passion for gaming and decided to pursue it professionally.
           </p>
+        </div>
         </div>
       </div>
     </motion.section>
