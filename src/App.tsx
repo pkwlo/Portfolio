@@ -7,9 +7,8 @@ import Contact from './sections/Contact'
 
 function App() {
   return (
-    /* The Wrapper: Handles the full-width background and height */
-    <div className='bg-space-pattern bg-cover bg-fixed bg-bottom min-h-screen w-full '>
-      <main className='flex flex-col gap-5 p-6 mx-auto max-w-5xl'>
+    <div className="bg-gradient-mesh min-h-screen w-full">
+      <main className="flex flex-col mx-auto max-w-4xl px-6 py-8 md:px-8 md:py-12">
         <NavTop />
         <About />
         <Projects />

@@ -1,9 +1,32 @@
 @import "tailwindcss";
-body {
-  background-color: #080b0b;
-  color: aliceblue;
+
+:root {
+  --color-bg: #0a0a0f;
+  --color-surface: #12121a;
+  --color-surface-elevated: #1a1a24;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-accent: #14b8a6;
+  --color-accent-muted: rgba(20, 184, 166, 0.15);
+  --color-text: #f4f4f5;
+  --color-text-muted: #a1a1aa;
 }
 
-@theme {
-  --background-image-space-pattern: url('/space-crop.jpeg');
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Outfit', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle gradient overlay for depth */
+.bg-gradient-mesh {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(20, 184, 166, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(99, 102, 241, 0.05), transparent),
+    var(--color-bg);
 }
