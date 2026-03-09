@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function About() {
   return (
@@ -29,7 +30,7 @@ export default function About() {
             When I'm not working on personal projects, I enjoy playing video games, doing digital art, building legos and model kits, and playing guitar. I'm also a big fan of anime and manga and it seems like my list of hobbies is always growing!
           </p>
           <p className="text-[var(--color-text-muted)] leading-relaxed">
-            I'm currently working on a game called Apothecary Understudy, you can see my progress on my <a href="/blog" className="text-[var(--color-accent)] hover:underline">dev blog</a>.
+            I'm currently working on a game called Apothecary Understudy, you can see my progress on my <Link to="/blog">dev blog</Link>.
           </p>
         </div>
         </div>

@@ -22,12 +22,10 @@ export default function NavTop() {
       
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        // Optional: Update the URL without refreshing
+        // Update the URL without refreshing
         window.history.pushState(null, '', href);
       }
     }
-    // If we are on /blog and click /#about, the default <Link> behavior 
-    // will take us to the home page, which is correct.
   }
 
   return (
