@@ -39,10 +39,11 @@ export default function Skills() {
       className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8"
     >
       <div className="mx-auto max-w-4xl w-full">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-12">
-          Skills
-        </h2>
-        <div className="flex flex-wrap gap-3">
+        <div className="rounded-2xl border border-[var(--color-border)] bg-[#e6beae] p-8 md:p-12 backdrop-blur-sm">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-12">
+            Skills
+          </h2>
+          <div className="flex flex-wrap gap-3">
         {skills.map(({ name, icon: Icon }, idx) => (
           <motion.span
             key={name}
@@ -50,12 +51,13 @@ export default function Skills() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: idx * 0.02 }}
-            className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]/50 text-[var(--color-text-muted)] hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-muted)] transition-all duration-200"
+            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md bg-[#eee4e1] text-[var(--color-text-muted)] border border-[var(--color-border)]"
           >
             <Icon className="size-5 shrink-0" />
             {name}
           </motion.span>
         ))}
+          </div>
         </div>
       </div>
     </motion.section>

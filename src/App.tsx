@@ -11,19 +11,6 @@ const SECTIONS = ['about', 'projects', 'skills', 'contact'] as const
 
 function App() {
   const [visibleSection, setVisibleSection] = useState<string>('about')
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    const stored = localStorage.getItem('theme') as 'dark' | 'light' | null
-    return stored ?? 'dark'
-  })
-
-  useEffect(() => {
-    if (theme === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light')
-    } else {
-      document.documentElement.removeAttribute('data-theme')
-    }
-    localStorage.setItem('theme', theme)
-  }, [theme])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,10 +38,10 @@ function App() {
 
   return (
     <div className="scroll-container bg-gradient-mesh h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory">
-      <NavTop theme={theme} onThemeToggle={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))} />
+      <NavTop />
       <a
         href={`#${nextSection}`}
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+        className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[#ECF8F8]/90 hover:text-[#EEE4E1] transition-colors"
         aria-label={isLastSection ? 'Scroll to top' : 'Scroll down'}
       >
         <span className="text-xs font-medium">{isLastSection ? 'Back to top' : 'Scroll'}</span>

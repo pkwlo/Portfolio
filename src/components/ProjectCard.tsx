@@ -1,5 +1,4 @@
 import { ExternalLink, Github } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 interface ProjectProps {
   title: string;
@@ -11,12 +10,8 @@ interface ProjectProps {
 
 export default function ProjectCard({ title, description, tags, site, github }: ProjectProps) {
   return (
-    <motion.article
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.2 }}
-      className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/30 hover:bg-[var(--color-surface-elevated)]/50"
-    >
-      <h3 className="mb-3 text-xl font-semibold tracking-tight text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors">
+    <article className="rounded-xl border border-[var(--color-border)] bg-[#eee4e1] p-6">
+      <h3 className="mb-3 text-xl font-semibold tracking-tight text-[var(--color-text)]">
         {title}
       </h3>
       <p className="mb-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
@@ -27,7 +22,7 @@ export default function ProjectCard({ title, description, tags, site, github }: 
         {tags.map((tag) => (
           <span
             key={tag}
-            className="px-2.5 py-1 text-xs font-medium rounded-md bg-[var(--color-accent-muted)] text-[var(--color-accent)]"
+            className="px-2.5 py-1 text-xs font-medium rounded-md bg-[#ecf8f8] text-[var(--color-text-muted)]"
           >
             {tag}
           </span>
@@ -40,7 +35,7 @@ export default function ProjectCard({ title, description, tags, site, github }: 
             href={site}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+            className="flex items-center gap-1.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] hover:bg-[#ecf8f8] hover:underline underline-offset-2 px-2 py-1 -mx-2 -my-1 rounded transition-colors"
             aria-label="View live site"
           >
             <ExternalLink size={16} />
@@ -52,7 +47,7 @@ export default function ProjectCard({ title, description, tags, site, github }: 
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+            className="flex items-center gap-1.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] hover:bg-[#ecf8f8] hover:underline underline-offset-2 px-2 py-1 -mx-2 -my-1 rounded transition-colors"
             aria-label="View on GitHub"
           >
             <Github size={16} />
@@ -60,6 +55,6 @@ export default function ProjectCard({ title, description, tags, site, github }: 
           </a>
         )}
       </div>
-    </motion.article>
+    </article>
   );
 }
