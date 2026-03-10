@@ -4,6 +4,7 @@ interface Project {
   tags: string[];
   site?: string;
   github?: string;
+  event?: string;
 }
 
 export const projects: Project[] = [
@@ -19,5 +20,12 @@ export const projects: Project[] = [
     description: "Modernized website for a financial services company.",
     tags: ["PHP", "Laravel"],
     site: "https://www.equitygroup.com.hk/en_gb",
+  },
+  {
+    title: "Find My Force",
+    description: "Team N Squared's submission to Red Team Hack's Find My Force Hackathon 2026 where we won third place.",
+    tags: ["Python", "React", "TypeScript", "Machine Learning"],
+    github: "https://github.com/pkwlo/find-my-force",
+    event: "https://redteamhack.ca/events/vancouver-ubc",
   },
 ];

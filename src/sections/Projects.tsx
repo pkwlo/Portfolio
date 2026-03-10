@@ -26,6 +26,7 @@ export default function Projects() {
             tags={project.tags}
             site={project.site}
             github={project.github}
+            event={project.event}
           />
         ))}
           </div>
