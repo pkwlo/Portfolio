@@ -4,10 +4,10 @@ import { socialLinks } from "../data/links";
 
 const iconMap = { LinkedIn: Linkedin, GitHub: Github, Email: Mail };
 
-export default function Contact() {
+export default function Connect() {
   return (
     <motion.section
-      id="contact"
+      id="connect"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

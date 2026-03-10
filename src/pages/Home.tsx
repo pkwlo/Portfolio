@@ -3,9 +3,9 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import About from "../sections/About";
 import Projects from "../sections/Projects";
 import Skills from "../sections/Skills";
-import Contact from "../sections/Contact";
+import Connect from "../sections/Connect";
 
-const SECTIONS = ["about", "projects", "skills", "contact"] as const;
+const SECTIONS = ["about", "projects", "skills", "connect"] as const;
 
 export default function Home() {
   const [visibleSection, setVisibleSection] = useState<string>("about");
@@ -62,7 +62,7 @@ export default function Home() {
         <About />
         <Projects />
         <Skills />
-        <Contact />
+        <Connect />
       </main>
     </div>
   );

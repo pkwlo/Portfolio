@@ -6,7 +6,7 @@ const navItems = [
   { label: 'About', href: '/#about' },
   { label: 'Projects', href: '/#projects' },
   { label: 'Skills', href: '/#skills' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Connect', href: '/#connect' },
   { label: 'Dev Blog', href: '/blog' },
 ]
 
@@ -22,7 +22,6 @@ export default function NavTop() {
       
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        // Update the URL without refreshing
         window.history.pushState(null, '', href);
       }
     }
