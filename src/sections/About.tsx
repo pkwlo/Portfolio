@@ -9,10 +9,10 @@ export default function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8"
+      className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8 pt-6 pb-6 md:pb-16"
     >
       <div className="mx-auto max-w-4xl w-full">
-        <div className="rounded-2xl border border-[var(--color-border)] bg-[#e6beae] p-8 md:p-12 backdrop-blur-sm">
+        <div className="rounded-2xl border border-[var(--color-border)] bg-[#e6beae] p-5 sm:p-8 md:p-12 backdrop-blur-sm">
         <p className="text-4xl md:text-5xl font-semibold tracking-tight text-[var(--color-text)] mb-2">
           Patricia
         </p>

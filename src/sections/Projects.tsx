@@ -28,24 +28,24 @@ export default function Projects() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8"
+      className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8 pt-6 pb-6 md:pb-16"
     >
       <div className="mx-auto max-w-4xl w-full">
-        <div className="rounded-2xl border border-[var(--color-border)] bg-[#e6beae] p-8 md:p-12 backdrop-blur-sm">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-12">
+        <div className="rounded-2xl border border-[var(--color-border)] bg-[#e6beae] p-5 sm:p-8 md:p-12 backdrop-blur-sm">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-8 md:mb-12">
             Projects
           </h2>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1 sm:gap-4">
             <button
               onClick={() => paginate(-1)}
               className="shrink-0 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
               aria-label="Previous project"
             >
-              <ChevronLeft className="size-6" />
+              <ChevronLeft className="size-5 sm:size-6" />
             </button>
 
-            <div className="flex-1 overflow-hidden relative min-h-[200px]">
+            <div className="flex-1 min-w-0 overflow-hidden relative min-h-[180px] sm:min-h-[200px]">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={index}
@@ -74,7 +74,7 @@ export default function Projects() {
               className="shrink-0 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
               aria-label="Next project"
             >
-              <ChevronRight className="size-6" />
+              <ChevronRight className="size-5 sm:size-6" />
             </button>
           </div>
 

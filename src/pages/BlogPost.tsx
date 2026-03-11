@@ -9,7 +9,7 @@ export default function BlogPost() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gradient-mesh flex flex-col items-center justify-center px-6 pt-24">
+      <div className="min-h-screen bg-gradient-mesh flex flex-col items-center justify-center px-6">
         <h1 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
           Post not found
         </h1>
@@ -24,8 +24,8 @@ export default function BlogPost() {
     );
   }
   return (
-    <div className="min-h-screen bg-gradient-mesh pt-24">
-      <article className="max-w-3xl mx-auto px-6 py-12 md:px-8">
+    <div className="min-h-screen bg-gradient-mesh">
+      <article className="max-w-3xl mx-auto px-6 py-6 md:py-12 md:px-8">
         <Link
           to="/blog"
           className="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] mb-8 transition-colors"

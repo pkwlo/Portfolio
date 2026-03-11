@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
+@source "../src";
 
 :root {
   --color-bg: #b2967d;
@@ -33,25 +35,25 @@ body {
 }
 
 /* Custom scrollbar - matches page color scheme */
-.scroll-container::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px;
 }
 
-.scroll-container::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: var(--color-section);
 }
 
-.scroll-container::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: var(--color-cards);
   border-radius: 4px;
 }
 
-.scroll-container::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: var(--color-highlight);
 }
 
 /* Firefox */
-.scroll-container {
+* {
   scrollbar-width: thin;
   scrollbar-color: var(--color-cards) var(--color-section);
 }

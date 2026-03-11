@@ -108,21 +108,21 @@ export default function Skills() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8"
+      className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8 pt-6 pb-6 md:pb-16"
     >
       <div className="mx-auto max-w-4xl w-full">
-        <div className="rounded-2xl border border-[var(--color-border)] bg-[#e6beae] p-8 md:p-12 backdrop-blur-sm">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-12">
+        <div className="rounded-2xl border border-[var(--color-border)] bg-[#e6beae] p-5 sm:p-8 md:p-12 backdrop-blur-sm">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-8 md:mb-12">
             Skills
           </h2>
 
-          <div className="flex items-center gap-3 min-h-[250px]">
+          <div className="flex items-center gap-1 sm:gap-3 min-h-[200px] sm:min-h-[250px]">
             <button
               onClick={() => paginate(-1)}
               className="shrink-0 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
               aria-label="Previous category"
             >
-              <ChevronLeft className="size-7" />
+              <ChevronLeft className="size-5 sm:size-7" />
             </button>
 
             <div className="flex-1 min-w-0 overflow-hidden relative min-h-[200px]">
@@ -139,14 +139,14 @@ export default function Skills() {
                   <h3 className="text-lg font-semibold tracking-tight text-[var(--color-text)] mb-5 text-center">
                     {category}
                   </h3>
-                  <div className="flex flex-wrap gap-3 justify-center">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
                     {items.map(({ name, icon: Icon }) => (
                       <div
                         key={name}
-                        className="flex flex-col items-center justify-center gap-2 size-20 rounded-lg bg-[#eee4e1] text-[var(--color-text-muted)]"
+                        className="flex flex-col items-center justify-center gap-1.5 sm:gap-2 size-16 sm:size-20 rounded-lg bg-[#eee4e1] text-[var(--color-text-muted)]"
                       >
-                        {Icon && <Icon className="size-7 shrink-0" />}
-                        <span className="text-[10px] font-medium leading-tight text-center px-1">
+                        {Icon && <Icon className="size-5 sm:size-7 shrink-0" />}
+                        <span className="text-[9px] sm:text-[10px] font-medium leading-tight text-center px-0.5 sm:px-1">
                           {name}
                         </span>
                       </div>
@@ -161,7 +161,7 @@ export default function Skills() {
               className="shrink-0 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
               aria-label="Next category"
             >
-              <ChevronRight className="size-7" />
+              <ChevronRight className="size-5 sm:size-7" />
             </button>
           </div>
 

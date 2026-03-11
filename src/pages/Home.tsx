@@ -28,7 +28,7 @@ export default function Home() {
           }
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
     SECTIONS.forEach((id) => {
       const el = document.getElementById(id);
@@ -43,10 +43,10 @@ export default function Home() {
   const isLastSection = nextIndex === 0;
 
   return (
-    <div className="scroll-container bg-gradient-mesh h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory">
+    <div className="scroll-container bg-gradient-mesh fixed top-14 md:top-20 inset-x-0 bottom-0 overflow-y-auto overflow-x-hidden snap-y snap-mandatory">
       <a
         href={`#${nextSection}`}
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[#ECF8F8]/90 hover:text-[#EEE4E1] transition-colors"
+        className="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex-col items-center gap-1 text-[#ECF8F8]/90 hover:text-[#EEE4E1] transition-colors"
         aria-label={isLastSection ? "Scroll to top" : "Scroll down"}
       >
         <span className="text-xs font-medium">
