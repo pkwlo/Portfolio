@@ -23,7 +23,6 @@ export default function BlogPost() {
       </div>
     );
   }
-
   return (
     <div className="min-h-screen bg-gradient-mesh pt-24">
       <article className="max-w-3xl mx-auto px-6 py-12 md:px-8">
@@ -34,21 +33,21 @@ export default function BlogPost() {
           <ArrowLeft className="size-4" />
           Back to blog
         </Link>
-        <header className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-4">
-            {post.title}
-          </h1>
-          {post.date && (
-            <time className="text-sm text-[var(--color-text-muted)]">
-              {new Date(post.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </time>
-          )}
-        </header>
         <div className="prose prose-invert max-w-none rounded-xl border border-[var(--color-border)] bg-[#e6beae] p-6 md:p-8">
+          <header className="mb-10">
+            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-4">
+              {post.title}
+            </h1>
+            {post.date && (
+              <time className="text-sm text-[var(--color-text-muted)]">
+                {new Date(post.date + "T00:00:00").toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            )}
+          </header>
           <ReactMarkdown
             components={{
               h1: ({ children }) => (

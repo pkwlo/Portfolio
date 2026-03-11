@@ -10,6 +10,7 @@ export interface Post {
   title: string;
   date: string;
   excerpt?: string;
+  tags: string[];
   content: string;
 }
 
@@ -41,11 +42,18 @@ export const posts: Post[] = Object.entries(modules)
       }
     });
 
+    const rawTags = (data.tags ?? "")
+      .replace(/^\[|]$/g, "")
+      .split(",")
+      .map((t) => t.trim())
+      .filter(Boolean);
+
     return {
       slug,
       title: data.title ?? slug,
       date: data.date ?? "",
       excerpt: data.excerpt,
+      tags: rawTags,
       content: body.trim(),
     };
   })

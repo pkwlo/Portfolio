@@ -26,7 +26,7 @@ export default function Blog() {
                 </h2>
                 {post.date && (
                   <time className="text-sm text-[var(--color-text-muted)]">
-                    {new Date(post.date).toLocaleDateString("en-US", {
+                    {new Date(post.date + "T00:00:00").toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
@@ -37,6 +37,18 @@ export default function Blog() {
                   <p className="mt-3 text-[var(--color-text-muted)]">
                     {post.excerpt}
                   </p>
+                )}
+                {post.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 text-xs font-medium rounded-md bg-[#ecf8f8] text-[var(--color-text-muted)]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </Link>
             </motion.article>

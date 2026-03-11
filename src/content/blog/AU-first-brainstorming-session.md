@@ -1,8 +1,8 @@
 ---
 title: The Beginning of Apothecary Understudy
-date: 2025-03-08
+date: 2026-03-08
 excerpt: How I started thinking about the first concepts of my long term project, Apothecary Understudy.
-tags:
+tags: [Apothecary Understudy,]
 ---
 
 # The Beginning

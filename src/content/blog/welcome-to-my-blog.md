@@ -1,11 +1,9 @@
 ---
 title: Welcome to My Dev Blog
-date: 2025-03-02
+date: 2026-03-02
 excerpt: A quick introduction to my new development blog.
 tags:
 ---
-
-# Welcome to My Dev Blog
 
 I'll be sharing thoughts on software development, lessons learned from projects, and tips I pick up along the way.
 
