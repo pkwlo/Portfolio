@@ -1,34 +1,106 @@
-import type { ComponentType } from "react";
-import { motion } from "framer-motion";
+import { useState, type ComponentType } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { IoLogoCss3 } from "react-icons/io5";
 import {
+  SiPython,
   SiJavascript,
   SiTypescript,
+  SiHtml5,
+  SiPhp,
+  SiKotlin,
   SiReact,
   SiNodedotjs,
-  SiExpress,
+  SiNextdotjs,
+  SiNestjs,
+  SiLaravel,
+  SiTailwindcss,
+  SiJquery,
   SiMongodb,
-  SiPostgresql,
-  SiPython,
-  SiGit,
+  SiMysql,
+  SiFirebase,
   SiDocker,
+  SiPostman,
+  SiGit,
+  SiFigma,
+  SiJira,
+  SiLinux,
 } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
+import { FaAws, FaJava, FaWindows, FaDatabase, FaBolt } from "react-icons/fa";
 
-const skills: { name: string; icon: ComponentType<{ className?: string }> }[] = [
-  { name: "JavaScript", icon: SiJavascript },
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "React", icon: SiReact },
-  { name: "Node.js", icon: SiNodedotjs },
-  { name: "Express", icon: SiExpress },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "SQL", icon: SiPostgresql },
-  { name: "Python", icon: SiPython },
-  { name: "Git", icon: SiGit },
-  { name: "Docker", icon: SiDocker },
-  { name: "AWS", icon: FaAws },
+type Skill = {
+  name: string;
+  icon?: ComponentType<{ className?: string }>;
+};
+
+const skillCategories: { category: string; items: Skill[] }[] = [
+  {
+    category: "Programming Languages",
+    items: [
+      { name: "Python", icon: SiPython },
+      { name: "Java", icon: FaJava },
+      { name: "SQL", icon: FaDatabase },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "HTML", icon: SiHtml5 },
+      { name: "CSS", icon: IoLogoCss3 },
+      { name: "PHP", icon: SiPhp },
+      { name: "Kotlin", icon: SiKotlin },
+    ],
+  },
+  {
+    category: "Frameworks & Libraries",
+    items: [
+      { name: "React", icon: SiReact },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Nest.js", icon: SiNestjs },
+      { name: "Laravel", icon: SiLaravel },
+      { name: "Tailwind", icon: SiTailwindcss },
+      { name: "jQuery", icon: SiJquery },
+      { name: "AJAX", icon: FaBolt },
+    ],
+  },
+  {
+    category: "Databases & Cloud Services",
+    items: [
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql },
+      { name: "Firebase", icon: SiFirebase },
+      { name: "AWS", icon: FaAws },
+    ],
+  },
+  {
+    category: "Systems & DevOps",
+    items: [
+      { name: "Windows", icon: FaWindows },
+      { name: "Linux", icon: SiLinux },
+      { name: "Docker", icon: SiDocker },
+      { name: "Postman", icon: SiPostman },
+      { name: "Git", icon: SiGit },
+      { name: "Figma", icon: SiFigma },
+      { name: "Jira", icon: SiJira },
+    ],
+  },
 ];
 
+const variants = {
+  enter: (dir: number) => ({ x: dir > 0 ? 120 : -120, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (dir: number) => ({ x: dir > 0 ? -120 : 120, opacity: 0 }),
+};
+
 export default function Skills() {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const paginate = (dir: number) => {
+    setDirection(dir);
+    setIndex((prev) => (prev + dir + skillCategories.length) % skillCategories.length);
+  };
+
+  const { category, items } = skillCategories[index];
+
   return (
     <motion.section
       id="skills"
@@ -43,20 +115,72 @@ export default function Skills() {
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-12">
             Skills
           </h2>
-          <div className="flex flex-wrap gap-3">
-        {skills.map(({ name, icon: Icon }, idx) => (
-          <motion.span
-            key={name}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: idx * 0.02 }}
-            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md bg-[#eee4e1] text-[var(--color-text-muted)] border border-[var(--color-border)]"
-          >
-            <Icon className="size-5 shrink-0" />
-            {name}
-          </motion.span>
-        ))}
+
+          <div className="flex items-center gap-3 min-h-[250px]">
+            <button
+              onClick={() => paginate(-1)}
+              className="shrink-0 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
+              aria-label="Previous category"
+            >
+              <ChevronLeft className="size-7" />
+            </button>
+
+            <div className="flex-1 min-w-0 overflow-hidden relative min-h-[200px]">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={index}
+                  custom={direction}
+                  variants={variants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <h3 className="text-lg font-semibold tracking-tight text-[var(--color-text)] mb-5 text-center">
+                    {category}
+                  </h3>
+                  <div className="flex flex-wrap gap-3 justify-center">
+                    {items.map(({ name, icon: Icon }) => (
+                      <div
+                        key={name}
+                        className="flex flex-col items-center justify-center gap-2 size-20 rounded-lg bg-[#eee4e1] text-[var(--color-text-muted)]"
+                      >
+                        {Icon && <Icon className="size-7 shrink-0" />}
+                        <span className="text-[10px] font-medium leading-tight text-center px-1">
+                          {name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <button
+              onClick={() => paginate(1)}
+              className="shrink-0 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
+              aria-label="Next category"
+            >
+              <ChevronRight className="size-7" />
+            </button>
+          </div>
+
+          <div className="flex justify-center gap-2 mt-6">
+            {skillCategories.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  setDirection(i > index ? 1 : -1);
+                  setIndex(i);
+                }}
+                className={`size-2.5 rounded-full transition-colors ${
+                  i === index
+                    ? "bg-[var(--color-text)]"
+                    : "bg-[var(--color-text-muted)]/40 hover:bg-[var(--color-text-muted)]"
+                }`}
+                aria-label={`Go to category ${i + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
