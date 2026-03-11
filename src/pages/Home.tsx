@@ -46,7 +46,7 @@ export default function Home() {
     <div className="scroll-container bg-gradient-mesh fixed top-14 md:top-20 inset-x-0 bottom-0 overflow-y-auto overflow-x-hidden snap-y snap-mandatory">
       <a
         href={`#${nextSection}`}
-        className="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex-col items-center gap-1 text-[#ECF8F8]/90 hover:text-[#EEE4E1] transition-colors"
+        className="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex-col items-center gap-1 text-[#ECF8F8]/90 hover:text-[#fff4f0] transition-colors"
         aria-label={isLastSection ? "Scroll to top" : "Scroll down"}
       >
         <span className="text-xs font-medium">

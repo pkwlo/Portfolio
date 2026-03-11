@@ -143,7 +143,7 @@ export default function Skills() {
                     {items.map(({ name, icon: Icon }) => (
                       <div
                         key={name}
-                        className="flex flex-col items-center justify-center gap-1.5 sm:gap-2 size-16 sm:size-20 rounded-lg bg-[#eee4e1] text-[var(--color-text-muted)]"
+                        className="flex flex-col items-center justify-center gap-1.5 sm:gap-2 size-16 sm:size-20 rounded-lg bg-[#fff4f0] text-[var(--color-text-muted)]"
                       >
                         {Icon && <Icon className="size-5 sm:size-7 shrink-0" />}
                         <span className="text-[9px] sm:text-[10px] font-medium leading-tight text-center px-0.5 sm:px-1">

@@ -29,21 +29,21 @@ export default function Connect() {
             name="name"
             placeholder="Name"
             required
-            className="w-full px-4 py-3 rounded-lg border border-[var(--color-border)] bg-[#eee4e1] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[#ecf8f8] focus:border-[#ecf8f8] transition-all"
+            className="w-full px-4 py-3 rounded-lg bg-[#fff4f0] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[#ecf8f8] focus:border-[#ecf8f8] transition-all"
           />
           <input
             type="email"
             name="email"
             placeholder="Email"
             required
-            className="w-full px-4 py-3 rounded-lg border border-[var(--color-border)] bg-[#eee4e1] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[#ecf8f8] focus:border-[#ecf8f8] transition-all"
+            className="w-full px-4 py-3 rounded-lg bg-[#fff4f0] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[#ecf8f8] focus:border-[#ecf8f8] transition-all"
           />
           <textarea
             name="message"
             placeholder="Message"
             required
             rows={4}
-            className="w-full px-4 py-3 rounded-lg border border-[var(--color-border)] bg-[#eee4e1] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[#ecf8f8] focus:border-[#ecf8f8] transition-all resize-none"
+            className="w-full px-4 py-3 rounded-lg bg-[#fff4f0] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[#ecf8f8] focus:border-[#ecf8f8] transition-all resize-none"
           />
           <button
             type="submit"
@@ -51,7 +51,7 @@ export default function Connect() {
           >
             Send Message
           </button>
-          <div className="flex items-center justify-center gap-6 pt-8 mt-4 border-t border-[var(--color-border)]">
+          <div className="flex items-center justify-center gap-6 pt-8 mt-4]">
             {socialLinks.map(({ href, label }) => {
               const Icon = iconMap[label as keyof typeof iconMap];
               return (

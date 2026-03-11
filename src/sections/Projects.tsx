@@ -64,6 +64,8 @@ export default function Projects() {
                     site={project.site}
                     github={project.github}
                     event={project.event}
+                    image={project.image}
+                    imageAlt={project.imageAlt}
                   />
                 </motion.div>
               </AnimatePresence>

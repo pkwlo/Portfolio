@@ -104,12 +104,12 @@ export default function BlogPost() {
                 </a>
               ),
               code: ({ children }) => (
-                <code className="px-1.5 py-0.5 rounded bg-[#eee4e1] text-[var(--color-text)] text-sm">
+                <code className="px-1.5 py-0.5 rounded bg-[#fff4f0] text-[var(--color-text)] text-sm">
                   {children}
                 </code>
               ),
               pre: ({ children }) => (
-                <pre className="p-4 rounded-lg bg-[#eee4e1] overflow-x-auto mb-4">
+                <pre className="p-4 rounded-lg bg-[#fff4f0] overflow-x-auto mb-4">
                   {children}
                 </pre>
               ),
