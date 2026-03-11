@@ -32,7 +32,7 @@ export const projects: Project[] = [
     description: "Modernized Equity Group's website with a new frontend design and features, an integrated admin dashboard for self management, and AWS hosting.",
     tags: ["PHP", "Laravel","Blade", "SCSS"],
     site: "https://www.equitygroup.com.hk/en_gb",
-    image: "./src/assets/images/projects/equitysite2.png",
+    image: "/images/projects/equitysite2.png",
     imageAlt: "Equity Group Website Revamp",
   },
   {
