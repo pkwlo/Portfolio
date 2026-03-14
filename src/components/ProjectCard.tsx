@@ -14,7 +14,7 @@ interface ProjectProps {
 
 export default function ProjectCard({ title, date, description, tags, site, github, event, image, imageAlt }: ProjectProps) {
   return (
-    <article className={`rounded-xl bg-[#fff4f0] overflow-hidden flex gap-0 ${image ? "flex-col sm:flex-row" : "p-6"}`}>
+    <article className={`h-[300px] rounded-xl bg-[#fff4f0] overflow-hidden flex gap-0 ${image ? "flex-col sm:flex-row" : "p-6"}`}>
       <div className={image ? "flex-1 min-w-0 p-6" : ""}>
         <h3 className="mb-3 text-xl font-semibold tracking-tight text-[var(--color-text)]">
           {title}

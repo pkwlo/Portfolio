@@ -53,8 +53,10 @@ export const projects: Project[] = [
     title: "HSR Relic Planner",
     date: "May 2024 - Sep 2024",
     description: "A full-stack planning tool for the mobile game Honkai Star Rail. My first solo project as a developer with the purpose of learning React while doing something I enjoy.",
-    tags: ["React", "TypeScript", "MongoDB"],
+    tags: ["React", "TypeScript", "Next.js", "TailwindCSS"],
     site: "https://hsr-relic-planner.com",
     github: "https://hsr-relic-planner.vercel.app/",
+    image: "/images/projects/hsr.png",
+    imageAlt: "HSR Relic Planner",
   },
 ];
