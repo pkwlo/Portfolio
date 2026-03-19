@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import About from "../sections/About";
 import Projects from "../sections/Projects";
-import Skills from "../sections/Skills";
 import Connect from "../sections/Connect";
+import Hero from "../sections/Hero";
 
-const SECTIONS = ["about", "projects", "skills", "connect"] as const;
+const SECTIONS = ["about", "projects", "connect"] as const;
 
 export default function Home() {
   const [visibleSection, setVisibleSection] = useState<string>("about");
@@ -59,9 +59,9 @@ export default function Home() {
         )}
       </a>
       <main className="flex flex-col">
+        <Hero />
         <About />
         <Projects />
-        <Skills />
         <Connect />
       </main>
     </div>

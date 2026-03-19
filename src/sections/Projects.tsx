@@ -28,13 +28,12 @@ export default function Projects() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="min-h-screen snap-start snap-always flex flex-col justify-center px-6 md:px-8 pt-6 pb-6 md:pb-16"
+      className="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-5rem)] snap-start snap-always flex flex-col justify-center pt-6 pb-6 md:pb-16"
     >
-      <div className="mx-auto max-w-4xl w-full">
-        <div className="rounded-2xl border border-[var(--color-border)] bg-[#e6beae] p-5 sm:p-8 md:p-12 backdrop-blur-sm">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-8 md:mb-12">
-            Projects
-          </h2>
+      <div className="mx-auto max-w-4xl w-full px-6 md:px-8">
+          <p className="text-4xl md:text-5xl font-semibold tracking-tight text-[var(--color-text)] mb-2">
+            My Work
+          </p>
 
           <div className="flex items-center gap-1 sm:gap-4">
             <button
@@ -98,7 +97,6 @@ export default function Projects() {
             ))}
           </div>
         </div>
-      </div>
     </motion.section>
   );
 }

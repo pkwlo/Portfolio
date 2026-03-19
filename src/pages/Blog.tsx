@@ -41,7 +41,7 @@ export default function Blog() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="rounded-xl border border-[var(--color-border)] bg-[#e6beae] p-6 md:p-8"
+              className="rounded-xl border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <h2 className="text-xl md:text-2xl font-semibold text-[var(--color-text)] mb-2">
                 {post.title}
@@ -66,7 +66,7 @@ export default function Blog() {
                     <Link
                       key={tag}
                       to={`/blog?tag=${encodeURIComponent(tag)}`}
-                      className={`px-2.5 py-1 text-xs font-medium rounded-md transition-colors bg-[#ecf8f8] text-[var(--color-text-muted)]`}
+                      className={`px-2.5 py-1 text-xs font-medium rounded-md transition-colors bg-[var(--color-navbar-bg)] text-[var(--color-navbar-text)]`}
                     >
                       {tag}
                     </Link>

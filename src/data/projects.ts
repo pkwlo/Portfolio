@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     title: "Find My Force",
     date: "Mar 2026",
-    description: "Team N Squared's submission to Red Team Hack's Find My Force Hackathon 2026 where we won third place.",
+    description: "Team N Squared's submission to Red Team Hack's Find My Force Hackathon 2026 where we won third place. Uses a trained machine learning model to classify RF signals to determine if they are friendly, hostile, or civilian devices.",
     tags: ["Python", "React", "TypeScript", "Machine Learning"],
     github: "https://github.com/pkwlo/find-my-force",
     event: "https://redteamhack.ca/events/vancouver-ubc",
@@ -22,8 +22,8 @@ export const projects: Project[] = [
   {
     title: "CrocsList",
     date: "Oct 2025 - Dec 2025",
-    description: "An online marketplace web application for buying and selling used clothing items.",
-    tags: ["Python", "React", "TypeScript", "JavaScript", "HTML", "CSS",  "AWS"],
+    description: "An online marketplace web application for buying and selling used clothing items and hosted on AWS via Amplify. Features include a user authentication system, a product listing system, a shopping cart, and a payment system.",
+    tags: ["Python", "React", "TypeScript", "AWS", "API Gateway"],
     github: "https://github.com/pkwlo/crocsList",
   },
   {
@@ -38,15 +38,15 @@ export const projects: Project[] = [
   {
     title: "iPatrol+",
     date: "May 2025",
-    description: "Real time patrol tracking app created for the KOMCPC (Kerrisdale Oakridge Marpole Community Policing Centre) and is currently used by volunteer patrollers accross the lower mainland.",
-    tags: ["React Native", "Expo"],
+    description: "Real time iOS patrolling app created for the KOMCPC (Kerrisdale Oakridge Marpole Community Policing Centre) to use on their patrols. It is currently used by volunteer patrollers accross the lower mainland.",
+    tags: ["React Native", "Expo", "iOS"],
     site: "https://apps.apple.com/ca/app/ipatrol-plus/id6746059052",
   },
   {
     title: "MH Wilds Handbook",
     date: "May 2025",
-    description: "A hunting handbook to the monsters in Monster Hunter Wilds to let you quickly find their locations and log any crowns you collect. Also incorporates steam API to show the latest news and updates for the game.",
-    tags: ["Kotlin", "Android Studio"],
+    description: "An Android app that serves as a hunting handbook for Monster Hunter Wilds. It lists information about monsters, their habitats, and allows hunters to log notes and crowns collected. It incorporates the Steam API to show the latest news and updates for the game.",
+    tags: ["Android", "Kotlin", "Android Studio", "API"],
     github: "https://github.com/pkwlo/MH-Wilds-Handbook",
   },
   {

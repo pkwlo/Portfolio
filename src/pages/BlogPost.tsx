@@ -33,7 +33,7 @@ export default function BlogPost() {
           <ArrowLeft className="size-4" />
           Back to blog
         </Link>
-        <div className="prose prose-invert max-w-none rounded-xl border border-[var(--color-border)] bg-[#e6beae] p-6 md:p-8">
+        <div className="prose prose-invert max-w-none rounded-xl border border-white/10 bg-white/5 p-6 md:p-8">
           <header className="mb-10">
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-4">
               {post.title}
@@ -53,7 +53,7 @@ export default function BlogPost() {
                   <Link
                     key={tag}
                     to={`/blog?tag=${encodeURIComponent(tag)}`}
-                    className="px-2.5 py-1 text-xs font-medium rounded-md bg-[#ecf8f8] text-[var(--color-text-muted)] transition-colors"
+                    className="px-2.5 py-1 text-xs font-medium rounded-md bg-[var(--color-navbar-bg)] text-[var(--color-navbar-text)] transition-colors"
                   >
                     {tag}
                   </Link>
@@ -104,12 +104,12 @@ export default function BlogPost() {
                 </a>
               ),
               code: ({ children }) => (
-                <code className="px-1.5 py-0.5 rounded bg-[#fff4f0] text-[var(--color-text)] text-sm">
+                <code className="px-1.5 py-0.5 rounded bg-white/10 text-[var(--color-text)] text-sm">
                   {children}
                 </code>
               ),
               pre: ({ children }) => (
-                <pre className="p-4 rounded-lg bg-[#fff4f0] overflow-x-auto mb-4">
+                <pre className="p-4 rounded-lg bg-white/10 overflow-x-auto mb-4">
                   {children}
                 </pre>
               ),

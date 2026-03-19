@@ -6,7 +6,6 @@ import { Menu, X } from 'lucide-react'
 const navItems = [
   { label: 'About', href: '/#about' },
   { label: 'Projects', href: '/#projects' },
-  { label: 'Skills', href: '/#skills' },
   { label: 'Connect', href: '/#connect' },
   { label: 'Dev Blog', href: '/blog' },
 ]
@@ -29,10 +28,10 @@ export default function NavTop() {
   }
 
   const linkClass = (href: string) =>
-    `text-sm font-medium transition-colors duration-200 ${
+    `text-md font-medium transition-colors duration-200 ${
       href === '/blog' && location.pathname.startsWith('/blog')
-        ? 'text-[#e6beae]'
-        : 'text-[#d4b896] hover:text-[#e6beae]'
+        ? 'text-[var(--color-navbar-text)]'
+        : 'text-[var(--color-navbar-text)] hover:text-[var(--color-navbar-text-hover)]'
     }`
 
   return (
@@ -40,15 +39,15 @@ export default function NavTop() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-[#2c1810] backdrop-blur-md bg-[#2c1810]"
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[var(--color-navbar-bg)]"
     >
       <div className="max-w-4xl mx-auto flex items-center justify-between py-4 px-6 md:py-6 md:px-8">
         <Link
-          to='/#about'
-          onClick={(e) => handleClick(e, '/#about')}
-          className="text-xl font-semibold tracking-tight text-[#d4b896] hover:text-[#e6beae] transition-colors"
+          to='/#hero'
+          onClick={(e) => handleClick(e, '/#hero')}
+          className="text-xl font-semibold tracking-tight text-[var(--color-navbar-text)] hover:text-[var(--color-navbar-text-hover)] transition-colors"
         >
-          PL
+          Patricia's Portfolio
         </Link>
 
         {/* Desktop links */}
