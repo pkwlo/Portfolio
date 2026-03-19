@@ -53,15 +53,6 @@ export default function Blog() {
                 All posts
               </Link>
             )}
-
-            {/* <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-[var(--color-text)] mb-2">
-              {activeTag ? `Tagged: ${activeTag}` : "Patricia's Dev Blog"}
-            </h1> */}
-            {/* {activeTag && (
-              <p className="text-sm text-[var(--color-text-muted)] mb-8">
-                {filtered.length} {filtered.length === 1 ? "post" : "posts"}
-              </p>
-            )} */}
             {!activeTag && <div className="mb-8" />}
             <div className="flex flex-col gap-8">
               {paginated.map((post, idx) => (
@@ -72,7 +63,7 @@ export default function Blog() {
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
                   className="rounded-xl bg-white/5 p-6 md:p-8"
                 >
-                  <h2 className="text-xl md:text-2xl font-semibold text-[var(--color-text)] mb-2">
+                  <h2 className="text-lg md:text-xl font-semibold text-[var(--color-text)] mb-2">
                     <Link
                       to={`/blog/${post.slug}`}
                       className="inline-block hover:text-[var(--color-accent)] transition-colors"

@@ -76,7 +76,7 @@ export default function NavTop() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-1 text-[#d4b896] hover:text-[#e6beae] transition-colors"
+          className="md:hidden p-1 text-[var(--color-navbar-text)] hover:text-[var(--color-navbar-text-hover)] transition-colors"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
