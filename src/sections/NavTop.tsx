@@ -43,8 +43,16 @@ export default function NavTop() {
     >
       <div className="max-w-4xl mx-auto flex items-center justify-between py-4 px-6 md:py-6 md:px-8">
         <Link
-          to='/#hero'
-          onClick={(e) => handleClick(e, '/#hero')}
+          to='/'
+          onClick={(e) => {
+            setMenuOpen(false);
+            if (location.pathname === '/') {
+              e.preventDefault();
+              const container = document.querySelector('.scroll-container');
+              container?.scrollTo({ top: 0, behavior: 'smooth' });
+              window.history.replaceState(null, '', '/');
+            }
+          }}
           className="text-xl font-semibold tracking-tight text-[var(--color-navbar-text)] hover:text-[var(--color-navbar-text-hover)] transition-colors"
         >
           Patricia's Portfolio
