@@ -5,7 +5,7 @@ import Projects from "../sections/Projects";
 import Connect from "../sections/Connect";
 import Hero from "../sections/Hero";
 import Writing from "../sections/Writing";
-const SECTIONS = ["hero", "about", "projects", "connect"] as const;
+const SECTIONS = ["hero", "about", "projects", "technical-writing", "connect"] as const;
 
 export default function Home() {
   const [visibleSection, setVisibleSection] = useState<string>("hero");

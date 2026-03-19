@@ -91,7 +91,7 @@ export default function NavTop() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="md:hidden overflow-hidden border-t border-[#d4b896]/20"
+            className="md:hidden overflow-hidden border-t border-[var(--color-navbar-text)]"
           >
             <div className="flex flex-col gap-4 px-6 py-5">
               {navItems.map((item) => (
