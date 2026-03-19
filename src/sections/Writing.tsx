@@ -1,7 +1,7 @@
 import { useState } from "react";
-import ProjectCard from "../components/ProjectCard";
+import WritingCard from "../components/WritingCard";
 import { motion, AnimatePresence } from "framer-motion";
-import { projects } from "../data/projects";
+import { writing } from "../data/writing";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const variants = {
@@ -10,20 +10,20 @@ const variants = {
   exit: (dir: number) => ({ x: dir > 0 ? -120 : 120, opacity: 0 }),
 };
 
-export default function Projects() {
+export default function Writing() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
   const paginate = (dir: number) => {
     setDirection(dir);
-    setIndex((prev) => (prev + dir + projects.length) % projects.length);
+    setIndex((prev) => (prev + dir + writing.length) % writing.length);
   };
 
-  const project = projects[index];
+  const item = writing[index];
 
   return (
     <motion.section
-      id="projects"
+      id="technical-writing"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -32,14 +32,14 @@ export default function Projects() {
     >
       <div className="mx-auto max-w-4xl w-full px-6 md:px-8">
           <p className="text-4xl md:text-5xl font-semibold tracking-tight text-[var(--color-text)] mb-2">
-            My Work
+            Technical Writing
           </p>
 
           <div className="relative">
             <button
               onClick={() => paginate(-1)}
               className="absolute -left-10 sm:-left-12 top-1/2 -translate-y-1/2 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
-              aria-label="Previous project"
+              aria-label="Previous piece"
             >
               <ChevronLeft className="size-5 sm:size-6" />
             </button>
@@ -55,16 +55,13 @@ export default function Projects() {
                   exit="exit"
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
-                  <ProjectCard
-                    title={project.title}
-                    date={project.date}
-                    description={project.description}
-                    tags={project.tags}
-                    site={project.site}
-                    github={project.github}
-                    event={project.event}
-                    image={project.image}
-                    imageAlt={project.imageAlt}
+                  <WritingCard
+                    title={item.title}
+                    date={item.date}
+                    description={item.description}
+                    tags={item.tags}
+                    site={item.site}
+                    link={item.link}
                   />
                 </motion.div>
               </AnimatePresence>
@@ -73,14 +70,14 @@ export default function Projects() {
             <button
               onClick={() => paginate(1)}
               className="absolute -right-10 sm:-right-12 top-1/2 -translate-y-1/2 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
-              aria-label="Next project"
+              aria-label="Next piece"
             >
               <ChevronRight className="size-5 sm:size-6" />
             </button>
           </div>
 
           <div className="flex justify-center gap-2 mt-6">
-            {projects.map((_, i) => (
+            {writing.map((_, i) => (
               <button
                 key={i}
                 onClick={() => {
@@ -92,7 +89,7 @@ export default function Projects() {
                     ? "bg-[var(--color-text)]"
                     : "bg-[var(--color-text-muted)]/40 hover:bg-[var(--color-text-muted)]"
                 }`}
-                aria-label={`Go to project ${i + 1}`}
+                aria-label={`Go to piece ${i + 1}`}
               />
             ))}
           </div>
