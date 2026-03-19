@@ -33,7 +33,7 @@ export default function BlogPost() {
           <ArrowLeft className="size-4" />
           Back to blog
         </Link>
-        <div className="prose prose-invert max-w-none rounded-xl border border-white/10 bg-white/5 p-6 md:p-8">
+        <div className="prose prose-invert max-w-none rounded-xl bg-white/5 p-6 md:p-8">
           <header className="mb-10">
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text)] mb-4">
               {post.title}

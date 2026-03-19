@@ -41,10 +41,15 @@ export default function Blog() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="rounded-xl border border-white/10 bg-white/5 p-6 md:p-8"
+              className="rounded-xl bg-white/5 p-6 md:p-8"
             >
               <h2 className="text-xl md:text-2xl font-semibold text-[var(--color-text)] mb-2">
+              <Link
+                to={`/blog/${post.slug}`}
+                className="inline-block hover:text-[var(--color-accent)] transition-colors"
+              >
                 {post.title}
+              </Link>
               </h2>
               {post.date && (
                 <time className="text-sm text-[var(--color-text-muted)]">
