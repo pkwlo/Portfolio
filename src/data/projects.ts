@@ -18,6 +18,8 @@ export const projects: Project[] = [
     tags: ["Python", "React", "TypeScript", "Machine Learning"],
     github: "https://github.com/pkwlo/find-my-force",
     event: "https://redteamhack.ca/events/vancouver-ubc",
+    image: "/images/projects/fmf.jpeg",
+    imageAlt: "Find My Force",
   },
   {
     title: "CrocsList",
