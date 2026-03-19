@@ -7,7 +7,7 @@ import {
   SiTypescript,
   SiHtml5,
   SiPhp,
-  SiKotlin,
+  // SiKotlin,
   SiReact,
   SiNodedotjs,
   SiNextdotjs,
@@ -22,10 +22,14 @@ import {
   SiPostman,
   SiGit,
   SiFigma,
-  SiJira,
-  SiLinux,
+  // SiJira,
+  // SiLinux,
 } from "react-icons/si";
-import { FaAws, FaJava, FaWindows, FaDatabase, FaBolt } from "react-icons/fa";
+import { FaAws, 
+  FaJava, 
+  // FaWindows, 
+  FaDatabase, 
+  FaBolt } from "react-icons/fa";
 
 type Skill = {
   name: string;

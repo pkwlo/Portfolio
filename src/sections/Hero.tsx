@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { FileTextIcon } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
