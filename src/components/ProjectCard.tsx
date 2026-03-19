@@ -14,11 +14,11 @@ interface ProjectProps {
 
 export default function ProjectCard({ title, date, description, tags, site, github, event, image, imageAlt }: ProjectProps) {
   return (
-    <article className={`h-[600px] rounded-xl overflow-hidden flex gap-0 ${image ? "flex-col sm:flex-row" : "flex-col justify-center"}`}>
+    <article className={`h-[460px] md:h-[600px] overflow-hidden flex gap-0 ${image ? "flex-col sm:flex-row" : "flex-col justify-center"}`}>
       <div className={image ? "flex-1 min-w-0 pt-6" : ""}>
       {image && (
         <div className="flex-1 min-w-0">
-          <img src={image} alt={imageAlt} className="h-[350px] w-full object-cover object-top mb-6 rounded-xl" />
+          <img src={image} alt={imageAlt} className="h-[180px] md:h-[350px] w-full object-cover object-top mb-6 rounded-xl" />
         </div>
       )}
         <h3 className="mb-3 text-xl font-semibold tracking-tight text-[var(--color-accent)]">

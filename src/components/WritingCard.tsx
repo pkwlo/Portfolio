@@ -11,7 +11,7 @@ interface WritingProps {
 
 export default function WritingCard({ title, date, description, tags, site, link }: WritingProps) {
   return (
-    <article className="rounded-xl overflow-hidden flex flex-col justify-center h-[300px]">
+    <article className="overflow-hidden flex flex-col justify-center h-[300px]">
       <h3 className="mb-3 text-xl font-semibold tracking-tight text-[var(--color-accent)]">
         {title}
       </h3>

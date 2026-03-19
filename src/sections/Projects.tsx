@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../data/projects";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+const SWIPE_THRESHOLD = 50;
+
 const variants = {
   enter: (dir: number) => ({ x: dir > 0 ? 120 : -120, opacity: 0 }),
   center: { x: 0, opacity: 1 },
@@ -38,13 +40,13 @@ export default function Projects() {
           <div className="relative">
             <button
               onClick={() => paginate(-1)}
-              className="absolute -left-10 sm:-left-12 top-1/2 -translate-y-1/2 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
+              className="hidden md:block absolute -left-12 top-1/2 -translate-y-1/2 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
               aria-label="Previous project"
             >
-              <ChevronLeft className="size-5 sm:size-6" />
+              <ChevronLeft className="size-6" />
             </button>
 
-            <div className="overflow-hidden relative min-h-[180px] sm:min-h-[200px]">
+            <div className="overflow-hidden relative min-h-[180px] sm:min-h-[200px] touch-pan-y">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={index}
@@ -54,6 +56,13 @@ export default function Projects() {
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.3, ease: "easeInOut" }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.3}
+                  onDragEnd={(_e, { offset }) => {
+                    if (offset.x < -SWIPE_THRESHOLD) paginate(1);
+                    else if (offset.x > SWIPE_THRESHOLD) paginate(-1);
+                  }}
                 >
                   <ProjectCard
                     title={project.title}
@@ -72,10 +81,10 @@ export default function Projects() {
 
             <button
               onClick={() => paginate(1)}
-              className="absolute -right-10 sm:-right-12 top-1/2 -translate-y-1/2 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
+              className="hidden md:block absolute -right-12 top-1/2 -translate-y-1/2 p-2 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[#ecf8f8]/50 transition-colors"
               aria-label="Next project"
             >
-              <ChevronRight className="size-5 sm:size-6" />
+              <ChevronRight className="size-6" />
             </button>
           </div>
 
