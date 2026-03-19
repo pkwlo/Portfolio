@@ -1,5 +1,5 @@
 ---
-title: The Beginning of Apothecary Understudy
+title: Devlog #1 — The Beginning of Apothecary Understudy
 date: 2026-03-08
 excerpt: A first look into my cozy fantasy medicine-making game, Apothecary Understudy.
 tags: [Apothecary Understudy]
