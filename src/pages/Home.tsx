@@ -4,7 +4,7 @@ import About from "../sections/About";
 import Projects from "../sections/Projects";
 import Connect from "../sections/Connect";
 import Hero from "../sections/Hero";
-import Writing from "../sections/Writing";
+// import Writing from "../sections/Writing";
 const SECTIONS = ["hero", "about", "projects", "technical-writing", "connect"] as const;
 
 export default function Home() {
@@ -62,7 +62,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        <Writing />
+        {/* <Writing /> */}
         <Connect />
       </main>
     </div>
