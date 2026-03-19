@@ -5,10 +5,10 @@ import Projects from "../sections/Projects";
 import Connect from "../sections/Connect";
 import Hero from "../sections/Hero";
 
-const SECTIONS = ["about", "projects", "connect"] as const;
+const SECTIONS = ["hero", "about", "projects", "connect"] as const;
 
 export default function Home() {
-  const [visibleSection, setVisibleSection] = useState<string>("about");
+  const [visibleSection, setVisibleSection] = useState<string>("hero");
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
